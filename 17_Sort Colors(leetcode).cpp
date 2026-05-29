@@ -15,6 +15,7 @@ public:
             if(nums[i]==0){
                 cnt0++;
 
+                
             }
             else if(nums[i]==1){
                 cnt1++;
