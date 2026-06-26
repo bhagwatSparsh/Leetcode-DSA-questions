@@ -25,3 +25,51 @@ public:
 };
 
 // optimal soln:
+//not udnerstood yet
+
+class Solution {
+private:
+    int treeSize;
+    vector<int> bit;
+
+    void update(int idx, int val) {
+        for (; idx < treeSize; idx += idx & -idx) {
+            bit[idx] += val;
+        }
+    }
+
+    int query(int idx) {
+        int sum = 0;
+        for (; idx > 0; idx -= idx & -idx) {
+            sum += bit[idx];
+        }
+        return sum;
+    }
+
+public:
+    long long countMajoritySubarrays(vector<int>& nums, int target) {
+        int n = nums.size();
+        treeSize = 2 * n + 5;
+        bit.assign(treeSize, 0);
+
+        int offset = n + 2; 
+        int currSum = 0;
+        
+        update(currSum + offset, 1);
+        
+        long long totalSubarrays = 0;
+        
+        for (int num : nums) {
+            if (num == target) {
+                currSum += 1;
+            } else {
+                currSum -= 1;
+            }
+            
+            totalSubarrays += query(currSum + offset - 1);
+            update(currSum + offset, 1);
+        }
+        
+        return totalSubarrays;
+    }
+};
