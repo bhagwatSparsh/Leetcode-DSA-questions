@@ -25,7 +25,6 @@ int find_larg(int arr[], int n){
     }
     return largest;
 }
-
 int main(){
     int n;
     cout<<"Enter the size of the array: ";
