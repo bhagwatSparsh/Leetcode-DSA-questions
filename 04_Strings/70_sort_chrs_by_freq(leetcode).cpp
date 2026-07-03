@@ -30,7 +30,6 @@ public:
         return new_str;
 
 
-        
     }
 };
 // optimal soln:
