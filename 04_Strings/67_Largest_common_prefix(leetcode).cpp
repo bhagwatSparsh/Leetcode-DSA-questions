@@ -1,5 +1,6 @@
 // brute force soln:
 
+
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
