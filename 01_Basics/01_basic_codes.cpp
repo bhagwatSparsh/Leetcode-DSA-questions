@@ -7,6 +7,7 @@ void print_name(string name){
 
 int main(){
     string name;
+    
     cout<<"Enter your full name: ";
 
     getline(cin,name);
