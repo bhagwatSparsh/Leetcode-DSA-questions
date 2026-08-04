@@ -21,6 +21,7 @@ void print_pattern(int n){
 
 void print_pattern_2(int n){
 
+    
     for (int i=0;i<n;i++){
         for (int j=0;j<=i;j++){
             cout<<" ";
