@@ -17,7 +17,7 @@ public:
             // 2. If closing bracket, validate and pop
             else {
                 if (st.empty()) {
-                    return false;
+                    return false;// runs when only closing bracket in the stack top
                 }
 
                 char top = st.top();
